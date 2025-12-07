@@ -1,23 +1,42 @@
 'use client';
 
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import TextField from '@mui/material/TextField';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SkipLink from '@/components/SkipLink';
+import DonateActionSchema from '@/components/DonateActionSchema';
 import Link from 'next/link';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
+const donationAmounts = [
+  { amount: 25, baskets: 1, description: '1 basket' },
+  { amount: 100, baskets: 4, description: '4 baskets' },
+  { amount: 250, baskets: 10, description: '10 baskets' },
+  { amount: 500, baskets: 20, description: '20 baskets' },
+];
 
 export default function DonatePage() {
+  const [frequency, setFrequency] = useState<'one-time' | 'monthly'>('one-time');
+  const [selectedAmount, setSelectedAmount] = useState<number>(100);
+  const [customAmount, setCustomAmount] = useState<string>('');
   return (
     <>
+      <DonateActionSchema />
+      <SkipLink />
       <Header />
-      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Box id="main-content" component="main" sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         {/* Page Header */}
         <Box
           sx={{
@@ -64,6 +83,166 @@ export default function DonatePage() {
           >
             Every donation to Sweet Baskets—whether monetary or in-kind—helps us create and deliver care baskets that bring hope, comfort, and connection to children in hospitals and elderly individuals experiencing isolation.
           </Typography>
+        </Container>
+
+        {/* Donation Form */}
+        <Container maxWidth="md" sx={{ py: 4 }}>
+          <Paper
+            elevation={3}
+            sx={{
+              p: { xs: 3, md: 5 },
+              borderRadius: 3,
+              background: 'linear-gradient(135deg, rgba(63, 91, 169, 0.02) 0%, rgba(233, 30, 99, 0.02) 100%)',
+            }}
+          >
+            <Typography variant="h4" sx={{ mb: 4, textAlign: 'center', color: 'primary.main', fontWeight: 700 }}>
+              Choose Your Contribution
+            </Typography>
+
+            {/* Frequency Toggle */}
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+              <ToggleButtonGroup
+                value={frequency}
+                exclusive
+                onChange={(e, newFreq) => newFreq && setFrequency(newFreq)}
+                sx={{
+                  '& .MuiToggleButton-root': {
+                    px: 4,
+                    py: 1.5,
+                    fontSize: '1rem',
+                    textTransform: 'none',
+                    '&.Mui-selected': {
+                      bgcolor: 'secondary.main',
+                      color: 'white',
+                      '&:hover': {
+                        bgcolor: 'secondary.dark',
+                      },
+                    },
+                  },
+                }}
+              >
+                <ToggleButton value="one-time">One-Time</ToggleButton>
+                <ToggleButton value="monthly">Monthly</ToggleButton>
+              </ToggleButtonGroup>
+            </Box>
+
+            {/* Suggested Amounts */}
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 4 }}>
+              {donationAmounts.map((option) => (
+                <Box
+                  key={option.amount}
+                  onClick={() => {
+                    setSelectedAmount(option.amount);
+                    setCustomAmount('');
+                  }}
+                  sx={{
+                    width: { xs: "calc(50% - 8px)", sm: "calc(25% - 12px)" },
+                    flex: { xs: "0 0 calc(50% - 8px)", sm: "0 0 calc(25% - 12px)" },
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Paper
+                    elevation={selectedAmount === option.amount ? 4 : 1}
+                    sx={{
+                      p: 3,
+                      textAlign: 'center',
+                      height: '100%',
+                      border: '2px solid',
+                      borderColor: selectedAmount === option.amount ? 'secondary.main' : 'transparent',
+                      transition: 'all 0.3s ease',
+                      bgcolor: selectedAmount === option.amount ? 'secondary.light' : 'white',
+                      '&:hover': {
+                        transform: 'translateY(-4px)',
+                        borderColor: 'secondary.main',
+                      },
+                    }}
+                  >
+                    <Typography variant="h5" sx={{ fontWeight: 700, color: 'primary.main', mb: 1 }}>
+                      ${option.amount}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.875rem' }}>
+                      {option.description}
+                    </Typography>
+                  </Paper>
+                </Box>
+              ))}
+            </Box>
+
+            {/* Custom Amount */}
+            <Box sx={{ mb: 4 }}>
+              <Typography variant="body1" sx={{ mb: 2, textAlign: 'center', color: 'text.secondary' }}>
+                Or enter a custom amount:
+              </Typography>
+              <TextField
+                fullWidth
+                type="number"
+                value={customAmount}
+                onChange={(e) => {
+                  setCustomAmount(e.target.value);
+                  setSelectedAmount(0);
+                }}
+                placeholder="Enter amount"
+                inputProps={{
+                  'aria-label': 'Custom donation amount',
+                  min: 1,
+                }}
+                InputProps={{
+                  startAdornment: <Typography sx={{ mr: 1, color: 'text.secondary' }}>$</Typography>,
+                }}
+                sx={{
+                  maxWidth: '300px',
+                  mx: 'auto',
+                  display: 'block',
+                }}
+              />
+            </Box>
+
+            {/* Donation Impact */}
+            {(selectedAmount > 0 || customAmount) && (
+              <Box
+                sx={{
+                  bgcolor: 'secondary.light',
+                  p: 3,
+                  borderRadius: 2,
+                  mb: 4,
+                  textAlign: 'center',
+                }}
+              >
+                <FavoriteIcon sx={{ fontSize: 32, color: 'secondary.main', mb: 1 }} />
+                <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
+                  Your Impact
+                </Typography>
+                <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                  ${customAmount || selectedAmount} {frequency === 'monthly' && 'per month'} will help deliver{' '}
+                  {Math.floor((Number(customAmount) || selectedAmount) / 25)} basket
+                  {Math.floor((Number(customAmount) || selectedAmount) / 25) !== 1 && 's'} to those in need.
+                </Typography>
+              </Box>
+            )}
+
+            {/* Donate Button */}
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              fullWidth
+              sx={{
+                py: 2,
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                boxShadow: '0 4px 14px rgba(233, 30, 99, 0.4)',
+                '&:hover': {
+                  boxShadow: '0 6px 20px rgba(233, 30, 99, 0.5)',
+                },
+              }}
+            >
+              Donate ${customAmount || selectedAmount} {frequency === 'monthly' ? 'Monthly' : 'Now'}
+            </Button>
+
+            <Typography variant="caption" sx={{ display: 'block', textAlign: 'center', mt: 2, color: 'text.secondary' }}>
+              Secure payment processing coming soon. Contact us to donate today.
+            </Typography>
+          </Paper>
         </Container>
 
         {/* Ways to Donate */}

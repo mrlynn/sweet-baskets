@@ -1,32 +1,64 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import CardContent from '@mui/material/CardContent';
 import Paper from '@mui/material/Paper';
 import Link from 'next/link';
 import Image from 'next/image';
+import { keyframes } from '@mui/system';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ArchedDivider from '@/components/ArchedDivider';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import FadeInCard from '@/components/FadeInCard';
 import SparkleIcon from '@/components/SparkleIcon';
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import SectionHeading from '@/components/SectionHeading';
+import SkipLink from '@/components/SkipLink';
+import OrganizationSchema from '@/components/OrganizationSchema';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import GroupsIcon from '@mui/icons-material/Groups';
 import BusinessIcon from '@mui/icons-material/Business';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+import CelebrationIcon from '@mui/icons-material/Celebration';
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <>
+      <OrganizationSchema />
+      <SkipLink />
       <Header />
-      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Box id="main-content" component="main" sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         {/* Hero Section */}
         <Box
           sx={{
@@ -104,6 +136,7 @@ export default function Home() {
                     mb: 3,
                     textShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                     position: 'relative',
+                    animation: mounted ? `${fadeInUp} 1s ease-out` : 'none',
                   }}
                 >
                   Small moments of kindness become lifelines of hope.
@@ -115,11 +148,18 @@ export default function Home() {
                     mb: 5,
                     opacity: 0.95,
                     fontWeight: 400,
+                    animation: mounted ? `${fadeInUp} 1s ease-out 0.2s backwards` : 'none',
                   }}
                 >
                   Sweet Baskets brings comfort to children in hospitals and elderly individuals who are homebound or in nursing care.
                 </Typography>
-                <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' }, flexWrap: 'wrap' }}>
+                <Box sx={{
+                  display: 'flex',
+                  gap: 2,
+                  justifyContent: { xs: 'center', md: 'flex-start' },
+                  flexWrap: 'wrap',
+                  animation: mounted ? `${fadeInUp} 1s ease-out 0.4s backwards` : 'none',
+                }}>
                   <Button
                     component={Link}
                     href="/donate"
@@ -130,6 +170,12 @@ export default function Home() {
                       fontSize: '1.125rem',
                       py: 1.5,
                       px: 4,
+                      boxShadow: '0 4px 14px rgba(233, 30, 99, 0.4)',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-3px)',
+                        boxShadow: '0 6px 20px rgba(233, 30, 99, 0.5)',
+                      },
                     }}
                   >
                     Give a Basket
@@ -145,9 +191,13 @@ export default function Home() {
                       px: 4,
                       color: 'white',
                       borderColor: 'white',
+                      borderWidth: '2px',
+                      transition: 'all 0.3s ease',
                       '&:hover': {
                         borderColor: 'white',
-                        bgcolor: 'rgba(255, 255, 255, 0.1)',
+                        bgcolor: 'rgba(255, 255, 255, 0.15)',
+                        transform: 'translateY(-3px)',
+                        boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       },
                     }}
                   >
@@ -165,6 +215,7 @@ export default function Home() {
                   alignItems: 'flex-end',
                   maxWidth: { xs: '100%', md: '550px' },
                   height: { xs: 'auto', md: '100%' },
+                  animation: mounted ? `${fadeIn} 1.2s ease-out 0.3s backwards` : 'none',
                 }}
               >
                 <Image
@@ -189,17 +240,7 @@ export default function Home() {
 
         {/* Mission Section */}
         <Container maxWidth="md" sx={{ py: 8 }}>
-          <Typography
-            variant="h2"
-            sx={{
-              textAlign: 'center',
-              mb: 4,
-              fontSize: { xs: '1.75rem', md: '2.5rem' },
-              color: 'primary.main',
-            }}
-          >
-            Our Mission
-          </Typography>
+          <SectionHeading mb={4}>Our Mission</SectionHeading>
           <Typography
             variant="body1"
             sx={{
@@ -216,19 +257,12 @@ export default function Home() {
         {/* How It Works Section */}
         <Box sx={{ bgcolor: 'background.default', py: 8 }}>
           <Container maxWidth="lg">
-            <Typography
-              variant="h2"
-              sx={{
-                textAlign: 'center',
-                mb: 6,
-                fontSize: { xs: '1.75rem', md: '2.5rem' },
-                color: 'primary.main',
-              }}
-            >
+            <SectionHeading subtitle="From donation to delivery, every step is guided by compassion">
               How It Works
-            </Typography>
+            </SectionHeading>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
+              {/* Step 1: You Give */}
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)", md: "calc(25% - 12px)" }, flex: { md: "1 1 0" } }}>
                 <FadeInCard
                   delay={0}
                   sx={{
@@ -236,6 +270,7 @@ export default function Home() {
                     textAlign: 'center',
                     transition: 'all 0.3s ease',
                     border: '2px solid transparent',
+                    position: 'relative',
                     '&:hover': {
                       transform: 'translateY(-8px)',
                       borderColor: 'secondary.main',
@@ -244,6 +279,25 @@ export default function Home() {
                   }}
                 >
                   <CardContent sx={{ p: 4 }}>
+                    {/* Step Number Badge */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 16,
+                        right: 16,
+                        width: 32,
+                        height: 32,
+                        borderRadius: '50%',
+                        bgcolor: 'secondary.light',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Typography variant="body2" sx={{ fontWeight: 700, color: 'secondary.main' }}>
+                        1
+                      </Typography>
+                    </Box>
                     <Box
                       sx={{
                         display: 'inline-flex',
@@ -253,25 +307,28 @@ export default function Home() {
                         mb: 3,
                       }}
                     >
-                      <VolunteerActivismIcon sx={{ fontSize: 40, color: 'white' }} />
+                      <CardGiftcardIcon sx={{ fontSize: 40, color: 'white' }} />
                     </Box>
-                    <Typography variant="h5" sx={{ mb: 2, color: 'primary.main' }}>
-                      1. We gather comfort items
+                    <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+                      You Give
                     </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                      Volunteers, donors, and partners contribute age-appropriate gifts and essentials.
+                    <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                      Donate items, funds, or your time to help us gather comfort essentials
                     </Typography>
                   </CardContent>
                 </FadeInCard>
               </Box>
-              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
+
+              {/* Step 2: We Build */}
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)", md: "calc(25% - 12px)" }, flex: { md: "1 1 0" } }}>
                 <FadeInCard
-                  delay={200}
+                  delay={150}
                   sx={{
                     height: '100%',
                     textAlign: 'center',
                     transition: 'all 0.3s ease',
                     border: '2px solid transparent',
+                    position: 'relative',
                     '&:hover': {
                       transform: 'translateY(-8px)',
                       borderColor: 'secondary.main',
@@ -280,6 +337,25 @@ export default function Home() {
                   }}
                 >
                   <CardContent sx={{ p: 4 }}>
+                    {/* Step Number Badge */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 16,
+                        right: 16,
+                        width: 32,
+                        height: 32,
+                        borderRadius: '50%',
+                        bgcolor: 'secondary.light',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Typography variant="body2" sx={{ fontWeight: 700, color: 'secondary.main' }}>
+                        2
+                      </Typography>
+                    </Box>
                     <Box
                       sx={{
                         display: 'inline-flex',
@@ -289,25 +365,28 @@ export default function Home() {
                         mb: 3,
                       }}
                     >
-                      <FavoriteIcon sx={{ fontSize: 40, color: 'white' }} />
+                      <HandshakeIcon sx={{ fontSize: 40, color: 'white' }} />
                     </Box>
-                    <Typography variant="h5" sx={{ mb: 2, color: 'primary.main' }}>
-                      2. We assemble with care
+                    <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+                      We Build
                     </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                      Each basket is personalized to brighten someone's day.
+                    <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                      Volunteers thoughtfully assemble each basket with care and intention
                     </Typography>
                   </CardContent>
                 </FadeInCard>
               </Box>
-              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
+
+              {/* Step 3: We Deliver */}
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)", md: "calc(25% - 12px)" }, flex: { md: "1 1 0" } }}>
                 <FadeInCard
-                  delay={400}
+                  delay={300}
                   sx={{
                     height: '100%',
                     textAlign: 'center',
                     transition: 'all 0.3s ease',
                     border: '2px solid transparent',
+                    position: 'relative',
                     '&:hover': {
                       transform: 'translateY(-8px)',
                       borderColor: 'secondary.main',
@@ -316,6 +395,25 @@ export default function Home() {
                   }}
                 >
                   <CardContent sx={{ p: 4 }}>
+                    {/* Step Number Badge */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 16,
+                        right: 16,
+                        width: 32,
+                        height: 32,
+                        borderRadius: '50%',
+                        bgcolor: 'secondary.light',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Typography variant="body2" sx={{ fontWeight: 700, color: 'secondary.main' }}>
+                        3
+                      </Typography>
+                    </Box>
                     <Box
                       sx={{
                         display: 'inline-flex',
@@ -327,11 +425,69 @@ export default function Home() {
                     >
                       <LocalShippingIcon sx={{ fontSize: 40, color: 'white' }} />
                     </Box>
-                    <Typography variant="h5" sx={{ mb: 2, color: 'primary.main' }}>
-                      3. We deliver with love
+                    <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+                      We Deliver
                     </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                      To pediatric hospital rooms, nursing homes, and homebound seniors.
+                    <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                      Baskets reach hospital rooms, nursing homes, and homebound seniors
+                    </Typography>
+                  </CardContent>
+                </FadeInCard>
+              </Box>
+
+              {/* Step 4: You Create Joy */}
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)", md: "calc(25% - 12px)" }, flex: { md: "1 1 0" } }}>
+                <FadeInCard
+                  delay={450}
+                  sx={{
+                    height: '100%',
+                    textAlign: 'center',
+                    transition: 'all 0.3s ease',
+                    border: '2px solid transparent',
+                    position: 'relative',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      borderColor: 'secondary.main',
+                      boxShadow: '0 8px 24px rgba(233, 30, 99, 0.2)',
+                    },
+                  }}
+                >
+                  <CardContent sx={{ p: 4 }}>
+                    {/* Step Number Badge */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 16,
+                        right: 16,
+                        width: 32,
+                        height: 32,
+                        borderRadius: '50%',
+                        bgcolor: 'secondary.light',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Typography variant="body2" sx={{ fontWeight: 700, color: 'secondary.main' }}>
+                        4
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: 'inline-flex',
+                        p: 2,
+                        bgcolor: 'secondary.main',
+                        borderRadius: '50%',
+                        mb: 3,
+                      }}
+                    >
+                      <CelebrationIcon sx={{ fontSize: 40, color: 'white' }} />
+                    </Box>
+                    <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+                      You Create Joy
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                      Recipients feel seen, valued, and reminded they're not alone
                     </Typography>
                   </CardContent>
                 </FadeInCard>
@@ -443,6 +599,139 @@ export default function Home() {
             </Box>
           </Box>
         </Container>
+
+        {/* Stories Section */}
+        <Box sx={{ bgcolor: 'background.default', py: 8 }}>
+          <Container maxWidth="lg">
+            <SectionHeading subtitle="Every basket tells a story of connection, comfort, and compassion.">
+              Stories of Impact
+            </SectionHeading>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+              {/* Story 1 - Senior Recipient */}
+              <Box sx={{ width: { xs: "100%", md: "calc(50% - 16px)" }, flex: { md: "1 1 0" } }}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 4,
+                    height: '100%',
+                    borderLeft: '4px solid',
+                    borderColor: 'secondary.main',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                    },
+                  }}
+                >
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontSize: '1.125rem',
+                      lineHeight: 1.8,
+                      fontStyle: 'italic',
+                      color: 'text.secondary',
+                      mb: 3,
+                    }}
+                  >
+                    "When I received my basket, I felt like someone remembered I existed. The puzzle kept my mind sharp, the lotion made my hands feel young again, and the sweet note reminded me that kindness still exists in this world."
+                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    <Box
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        borderRadius: '50%',
+                        bgcolor: 'secondary.light',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <FavoriteIcon sx={{ color: 'secondary.main', fontSize: 24 }} />
+                    </Box>
+                    <Box>
+                      <Typography variant="body2" sx={{ fontWeight: 600, color: 'primary.main' }}>
+                        Margaret T.
+                      </Typography>
+                      <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                        Nursing home resident, 84
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Paper>
+              </Box>
+
+              {/* Story 2 - Volunteer */}
+              <Box sx={{ width: { xs: "100%", md: "calc(50% - 16px)" }, flex: { md: "1 1 0" } }}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 4,
+                    height: '100%',
+                    borderLeft: '4px solid',
+                    borderColor: 'primary.main',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                    },
+                  }}
+                >
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontSize: '1.125rem',
+                      lineHeight: 1.8,
+                      fontStyle: 'italic',
+                      color: 'text.secondary',
+                      mb: 3,
+                    }}
+                  >
+                    "Assembling baskets with Sweet Baskets has given me purpose. Seeing the joy on recipients' faces when we deliver reminds me why community matters. It's not just about the gifts—it's about showing up for each other."
+                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    <Box
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        borderRadius: '50%',
+                        bgcolor: 'primary.light',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <GroupsIcon sx={{ color: 'primary.main', fontSize: 24 }} />
+                    </Box>
+                    <Box>
+                      <Typography variant="body2" sx={{ fontWeight: 600, color: 'primary.main' }}>
+                        Sarah K.
+                      </Typography>
+                      <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                        Volunteer coordinator
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Paper>
+              </Box>
+            </Box>
+
+            {/* CTA to Stories Page */}
+            <Box sx={{ textAlign: 'center', mt: 6 }}>
+              <Button
+                component={Link}
+                href="/stories"
+                variant="outlined"
+                color="primary"
+                size="large"
+                sx={{
+                  px: 4,
+                  py: 1.5,
+                }}
+              >
+                Read More Stories
+              </Button>
+            </Box>
+          </Container>
+        </Box>
       </Box>
       <Footer />
     </>

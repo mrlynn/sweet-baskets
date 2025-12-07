@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { useFeatureFlag } from '@/hooks/useFeatureFlag';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const pages = [
+const basePages = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Programs', href: '/programs' },
@@ -25,6 +26,22 @@ const pages = [
 
 export default function Header() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const showHospitalPortal = useFeatureFlag('HOSPITAL_PARTNER_PORTAL');
+  const showVolunteerHours = useFeatureFlag('VOLUNTEER_HOURS_TRACKING');
+
+  const pages = useMemo(() => {
+    const dynamicPages = [...basePages];
+
+    if (showHospitalPortal) {
+      dynamicPages.splice(5, 0, { label: 'Partner Portal', href: '/partners/portal' });
+    }
+
+    if (showVolunteerHours) {
+      dynamicPages.splice(4, 0, { label: 'Track Hours', href: '/volunteer/hours' });
+    }
+
+    return dynamicPages;
+  }, [showHospitalPortal, showVolunteerHours]);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);

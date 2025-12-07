@@ -7,12 +7,17 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ImpactMap from '@/components/ImpactMap';
+import SectionHeading from '@/components/SectionHeading';
+import { useFeatureFlag } from '@/hooks/useFeatureFlag';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import GroupsIcon from '@mui/icons-material/Groups';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BusinessIcon from '@mui/icons-material/Business';
 
 export default function ImpactPage() {
+  const showImpactMap = useFeatureFlag('IMPACT_MAP');
+
   return (
     <>
       <Header />
@@ -177,6 +182,18 @@ export default function ImpactPage() {
             </Box>
             </Box>
         </Container>
+
+        {/* Impact Map - Feature Flag */}
+        {showImpactMap && (
+          <Box sx={{ bgcolor: 'background.default', py: 8 }}>
+            <Container maxWidth="lg">
+              <SectionHeading subtitle="Visualizing our reach across communities">
+                Communities We Serve
+              </SectionHeading>
+              <ImpactMap />
+            </Container>
+          </Box>
+        )}
 
         {/* Pilot Story */}
         <Box sx={{ bgcolor: 'background.default', py: 8 }}>

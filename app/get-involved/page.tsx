@@ -9,16 +9,24 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BasketWeavePattern from '@/components/BasketWeavePattern';
+import SectionHeading from '@/components/SectionHeading';
+import SkipLink from '@/components/SkipLink';
 import Link from 'next/link';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import BusinessIcon from '@mui/icons-material/Business';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import GroupsIcon from '@mui/icons-material/Groups';
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import Paper from '@mui/material/Paper';
 
 export default function GetInvolvedPage() {
   return (
     <>
+      <SkipLink />
       <Header />
-      <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Box id="main-content" component="main" sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         {/* Page Header */}
         <Box
           sx={{
@@ -66,20 +74,114 @@ export default function GetInvolvedPage() {
           </Typography>
         </Container>
 
-        {/* Ways to Help */}
-        <Box sx={{ bgcolor: 'background.default', py: 8 }}>
-          <Container maxWidth="lg">
-            <Typography
-              variant="h2"
+        {/* Why We Need You */}
+        <Box sx={{ bgcolor: 'background.default', py: 8, position: 'relative', overflow: 'hidden' }}>
+          <BasketWeavePattern opacity={0.04} />
+          <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+            <SectionHeading subtitle="Sweet Baskets is growing, and we need passionate volunteers to help us reach more people in need.">
+              Why We Need You
+            </SectionHeading>
+
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 6 }}>
+              {/* The Need */}
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 4,
+                    height: '100%',
+                    textAlign: 'center',
+                    bgcolor: 'white',
+                  }}
+                >
+                  <FavoriteIcon sx={{ fontSize: 48, color: 'secondary.main', mb: 2 }} />
+                  <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+                    The Need is Real
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                    Thousands of seniors and children in our community experience isolation and could benefit from the comfort of a care basket.
+                  </Typography>
+                </Paper>
+              </Box>
+
+              {/* Your Impact */}
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 4,
+                    height: '100%',
+                    textAlign: 'center',
+                    bgcolor: 'white',
+                  }}
+                >
+                  <GroupsIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
+                  <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+                    Your Time Multiplies
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                    Every hour you volunteer helps us assemble and deliver multiple baskets, creating ripples of joy throughout the community.
+                  </Typography>
+                </Paper>
+              </Box>
+
+              {/* Build Community */}
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
+                <Paper
+                  elevation={2}
+                  sx={{
+                    p: 4,
+                    height: '100%',
+                    textAlign: 'center',
+                    bgcolor: 'white',
+                  }}
+                >
+                  <EmojiPeopleIcon sx={{ fontSize: 48, color: 'secondary.main', mb: 2 }} />
+                  <Typography variant="h6" sx={{ mb: 2, color: 'primary.main', fontWeight: 700 }}>
+                    You'll Feel Purpose
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                    Volunteering isn't just about giving—it's about connection, purpose, and being part of something meaningful.
+                  </Typography>
+                </Paper>
+              </Box>
+            </Box>
+
+            {/* Volunteer Testimonial */}
+            <Paper
+              elevation={0}
               sx={{
-                fontSize: { xs: '2rem', md: '2.5rem' },
-                mb: 6,
-                color: 'primary.main',
-                textAlign: 'center',
+                p: 4,
+                bgcolor: 'primary.light',
+                borderLeft: '4px solid',
+                borderColor: 'secondary.main',
+                maxWidth: '800px',
+                mx: 'auto',
               }}
             >
-              Ways to Help
-            </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: '1.125rem',
+                  lineHeight: 1.8,
+                  fontStyle: 'italic',
+                  color: 'primary.dark',
+                  mb: 2,
+                }}
+              >
+                "I started volunteering with Sweet Baskets to fill my free time. What I found was so much more—a community of caring people, meaningful work, and the chance to see firsthand how small acts of kindness transform lives."
+              </Typography>
+              <Typography variant="body2" sx={{ color: 'primary.dark', fontWeight: 600 }}>
+                — David M., Volunteer since 2024
+              </Typography>
+            </Paper>
+          </Container>
+        </Box>
+
+        {/* Ways to Help */}
+        <Box sx={{ py: 8 }}>
+          <Container maxWidth="lg">
+            <SectionHeading>Ways to Help</SectionHeading>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               {/* Volunteer */}
               <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
@@ -209,17 +311,7 @@ export default function GetInvolvedPage() {
 
         {/* What Volunteers Do */}
         <Container maxWidth="md" sx={{ py: 8 }}>
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: '2rem', md: '2.5rem' },
-              mb: 4,
-              color: 'primary.main',
-              textAlign: 'center',
-            }}
-          >
-            What Volunteers Do
-          </Typography>
+          <SectionHeading mb={4}>What Volunteers Do</SectionHeading>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
             <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
