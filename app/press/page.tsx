@@ -65,7 +65,7 @@ export default function PressPage() {
           <Typography variant="h4" sx={{ mb: 4, color: 'primary.main' }}>
             Key Facts
           </Typography>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ mb: 6 }}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 6 }}>
             <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
@@ -75,8 +75,8 @@ export default function PressPage() {
                   Bringing comfort through personalized care baskets
                 </Typography>
               </Paper>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
                   Programs
@@ -85,8 +85,8 @@ export default function PressPage() {
                   Children's Hospital Baskets & Elderly Care Baskets
                 </Typography>
               </Paper>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
                   Status
@@ -95,8 +95,8 @@ export default function PressPage() {
                   Applying for 501(c)(3) nonprofit status
                 </Typography>
               </Paper>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
                   2025 Goal
@@ -105,8 +105,8 @@ export default function PressPage() {
                   1,000 baskets delivered
                 </Typography>
               </Paper>
-            </Stack>
-          </Stack>
+            </Box>
+          </Box>
 
           <Typography variant="h4" sx={{ mb: 4, color: 'primary.main' }}>
             Brand Assets

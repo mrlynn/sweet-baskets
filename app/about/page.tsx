@@ -109,7 +109,7 @@ export default function AboutPage() {
             >
               Why This Work Matters
             </Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Paper
                   elevation={2}
@@ -137,8 +137,7 @@ export default function AboutPage() {
                     Hospital stays and nursing home life can be isolating. Our baskets provide emotional comfort and a tangible reminder that someone cares.
                   </Typography>
                 </Paper>
-              </Stack>
-
+              </Box>
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Paper
                   elevation={2}
@@ -166,8 +165,7 @@ export default function AboutPage() {
                     Each basket strengthens the bond between our community and those facing health challenges, building bridges of compassion.
                   </Typography>
                 </Paper>
-              </Stack>
-
+              </Box>
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Paper
                   elevation={2}
@@ -195,8 +193,8 @@ export default function AboutPage() {
                     Every person deserves to feel valued and remembered. Our personalized baskets restore dignity and bring moments of joy.
                   </Typography>
                 </Paper>
-              </Stack>
-            </Stack>
+              </Box>
+            </Box>
           </Container>
         </Box>
 

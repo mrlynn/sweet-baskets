@@ -66,7 +66,7 @@ export default function ProgramsPage() {
             Sweet Baskets delivers carefully curated care packages to two special groups: children facing medical challenges in hospitals and elderly individuals experiencing isolation in nursing homes or at home. Each program is designed with the unique needs of our recipients in mind.
           </Typography>
 
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
             {/* Children's Hospital Baskets */}
             <Box sx={{ width: { xs: "100%", md: "50%" } }}>
               <Card
@@ -115,7 +115,7 @@ export default function ProgramsPage() {
                   </Button>
                 </CardActions>
               </Card>
-            </Stack>
+            </Box>
 
             {/* Elderly Care Baskets */}
             <Box sx={{ width: { xs: "100%", md: "50%" } }}>
@@ -165,8 +165,8 @@ export default function ProgramsPage() {
                   </Button>
                 </CardActions>
               </Card>
-            </Stack>
-          </Stack>
+            </Box>
+            </Box>
         </Container>
 
         {/* Call to Action */}

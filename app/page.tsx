@@ -132,7 +132,7 @@ export default function Home() {
             >
               How It Works
             </Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Card
                   sx={{
@@ -164,8 +164,7 @@ export default function Home() {
                     </Typography>
                   </CardContent>
                 </Card>
-              </Stack>
-
+              </Box>
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Card
                   sx={{
@@ -197,8 +196,7 @@ export default function Home() {
                     </Typography>
                   </CardContent>
                 </Card>
-              </Stack>
-
+              </Box>
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Card
                   sx={{
@@ -230,8 +228,8 @@ export default function Home() {
                     </Typography>
                   </CardContent>
                 </Card>
-              </Stack>
-            </Stack>
+              </Box>
+            </Box>
           </Container>
         </Box>
 
@@ -278,7 +276,7 @@ export default function Home() {
 
         {/* Trust/Stats Section */}
         <Container maxWidth="lg" sx={{ py: 8 }}>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
             <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
               <Paper
                 elevation={2}
@@ -306,9 +304,8 @@ export default function Home() {
                   2025 Goal: Baskets Delivered
                 </Typography>
               </Paper>
-            </Stack>
-
-            <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -335,9 +332,8 @@ export default function Home() {
                   Volunteers Active
                 </Typography>
               </Paper>
-            </Stack>
-
-            <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -364,8 +360,8 @@ export default function Home() {
                   Partner Facilities
                 </Typography>
               </Paper>
-            </Stack>
-          </Stack>
+            </Box>
+            </Box>
         </Container>
       </Box>
       <Footer />

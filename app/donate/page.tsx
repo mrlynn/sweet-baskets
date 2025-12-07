@@ -80,7 +80,7 @@ export default function DonatePage() {
             >
               Ways to Donate
             </Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               {/* Financial Donation */}
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Paper
@@ -112,7 +112,7 @@ export default function DonatePage() {
                     Donation processing coming soon. Contact us to donate.
                   </Typography>
                 </Paper>
-              </Stack>
+              </Box>
 
               {/* In-Kind Donation */}
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
@@ -150,7 +150,7 @@ export default function DonatePage() {
                     See Needed Items
                   </Button>
                 </Paper>
-              </Stack>
+              </Box>
 
               {/* Corporate Sponsorship */}
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
@@ -188,8 +188,8 @@ export default function DonatePage() {
                     Learn More
                   </Button>
                 </Paper>
-              </Stack>
-            </Stack>
+              </Box>
+            </Box>
           </Container>
         </Box>
 
@@ -227,7 +227,7 @@ export default function DonatePage() {
             >
               How Your Donation Helps
             </Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={3}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
@@ -237,7 +237,7 @@ export default function DonatePage() {
                     Provides comfort items for one child's basket
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
@@ -247,7 +247,7 @@ export default function DonatePage() {
                     Completes one full elderly care basket
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
@@ -257,7 +257,7 @@ export default function DonatePage() {
                     Delivers two complete baskets to recipients
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
@@ -267,8 +267,8 @@ export default function DonatePage() {
                     Supports a full basket drive event
                   </Typography>
                 </Box>
-              </Stack>
-            </Stack>
+              </Box>
+            </Box>
           </Container>
         </Box>
 

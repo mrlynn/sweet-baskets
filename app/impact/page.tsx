@@ -62,8 +62,8 @@ export default function ImpactPage() {
           >
             2025 Goals & Progress
           </Typography>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }} md={3}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -90,9 +90,8 @@ export default function ImpactPage() {
                   Baskets Goal for 2025
                 </Typography>
               </Paper>
-            </Stack>
-
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }} md={3}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -119,9 +118,8 @@ export default function ImpactPage() {
                   Volunteer Network
                 </Typography>
               </Paper>
-            </Stack>
-
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }} md={3}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -148,9 +146,8 @@ export default function ImpactPage() {
                   Partner Facilities
                 </Typography>
               </Paper>
-            </Stack>
-
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }} md={3}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -177,8 +174,8 @@ export default function ImpactPage() {
                   Core Programs
                 </Typography>
               </Paper>
-            </Stack>
-          </Stack>
+            </Box>
+            </Box>
         </Container>
 
         {/* Pilot Story */}
@@ -232,7 +229,7 @@ export default function ImpactPage() {
           >
             Looking Ahead
           </Typography>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={3}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
             <Box sx={{ width: { xs: "100%", md: "50%" } }}>
               <Paper
                 elevation={0}
@@ -249,8 +246,8 @@ export default function ImpactPage() {
                   Partner with more hospitals, nursing homes, and assisted living facilities across the region.
                 </Typography>
               </Paper>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", md: "50%" } }}>
               <Paper
                 elevation={0}
                 sx={{
@@ -266,8 +263,8 @@ export default function ImpactPage() {
                   Recruit and train dedicated volunteers who share our passion for service.
                 </Typography>
               </Paper>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", md: "50%" } }}>
               <Paper
                 elevation={0}
                 sx={{
@@ -283,8 +280,8 @@ export default function ImpactPage() {
                   Complete our nonprofit application to unlock tax-deductible donations and grant opportunities.
                 </Typography>
               </Paper>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", md: "50%" } }}>
               <Paper
                 elevation={0}
                 sx={{
@@ -300,8 +297,8 @@ export default function ImpactPage() {
                   Document and celebrate the impact we're making in the lives of recipients and their families.
                 </Typography>
               </Paper>
-            </Stack>
-          </Stack>
+            </Box>
+            </Box>
         </Container>
 
         {/* Testimonial Placeholder */}

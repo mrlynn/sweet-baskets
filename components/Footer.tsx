@@ -52,7 +52,7 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="lg">
-        <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
           {/* Logo and Mission */}
           <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -89,7 +89,7 @@ export default function Footer() {
                 <TwitterIcon />
               </IconButton>
             </Box>
-          </Stack>
+          </Box>
 
           {/* About Links */}
           <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
@@ -112,7 +112,7 @@ export default function Footer() {
                 </Link>
               ))}
             </Box>
-          </Stack>
+          </Box>
 
           {/* Programs Links */}
           <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
@@ -135,7 +135,7 @@ export default function Footer() {
                 </Link>
               ))}
             </Box>
-          </Stack>
+          </Box>
 
           {/* Get Involved Links */}
           <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
@@ -158,7 +158,7 @@ export default function Footer() {
                 </Link>
               ))}
             </Box>
-          </Stack>
+          </Box>
 
           {/* Legal Links */}
           <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
@@ -181,8 +181,8 @@ export default function Footer() {
                 </Link>
               ))}
             </Box>
-          </Stack>
-        </Stack>
+          </Box>
+            </Box>
 
         {/* Bottom Bar */}
         <Box

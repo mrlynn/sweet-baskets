@@ -63,7 +63,7 @@ export default function ContactPage() {
             Whether you're interested in volunteering, making a donation, partnering with us, or simply want to learn more about Sweet Baskets, we're here to help. Reach out and let's start a conversation about how we can work together to bring comfort to those who need it most.
           </Typography>
 
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
             {/* Email */}
             <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
               <Paper
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   info@sweetbaskets.org
                 </Typography>
               </Paper>
-            </Stack>
+            </Box>
 
             {/* Phone */}
             <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                   Coming Soon
                 </Typography>
               </Paper>
-            </Stack>
+            </Box>
 
             {/* Location */}
             <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
@@ -158,8 +158,8 @@ export default function ContactPage() {
                   Your Community
                 </Typography>
               </Paper>
-            </Stack>
-          </Stack>
+            </Box>
+            </Box>
         </Container>
 
         {/* Reasons to Contact */}
@@ -176,7 +176,7 @@ export default function ContactPage() {
             >
               Reach Out If You Want To...
             </Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={3}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                     Join our team and help assemble and deliver care baskets
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                     Contribute financially or donate items for our baskets
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                     Connect your hospital or nursing home with Sweet Baskets
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                     Organize a basket drive at your school or workplace
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
@@ -226,7 +226,7 @@ export default function ContactPage() {
                     Ask questions about our programs and impact
                   </Typography>
                 </Box>
-              </Stack>
+              </Box>
               <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
@@ -236,8 +236,8 @@ export default function ContactPage() {
                     Tell us about your experience with Sweet Baskets
                   </Typography>
                 </Box>
-              </Stack>
-            </Stack>
+              </Box>
+            </Box>
           </Container>
         </Box>
 

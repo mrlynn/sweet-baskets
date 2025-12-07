@@ -80,7 +80,7 @@ export default function GetInvolvedPage() {
             >
               Ways to Help
             </Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={4}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               {/* Volunteer */}
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
                 <Card
@@ -120,7 +120,7 @@ export default function GetInvolvedPage() {
                     </Button>
                   </CardContent>
                 </Card>
-              </Stack>
+              </Box>
 
               {/* Host a Basket Drive */}
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
@@ -161,7 +161,7 @@ export default function GetInvolvedPage() {
                     </Button>
                   </CardContent>
                 </Card>
-              </Stack>
+              </Box>
 
               {/* Partner with Your Facility */}
               <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
@@ -202,8 +202,8 @@ export default function GetInvolvedPage() {
                     </Button>
                   </CardContent>
                 </Card>
-              </Stack>
-            </Stack>
+              </Box>
+            </Box>
           </Container>
         </Box>
 
@@ -220,7 +220,7 @@ export default function GetInvolvedPage() {
           >
             What Volunteers Do
           </Typography>
-          <Stack direction={{ xs: "column", sm: "row" }} spacing={3}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
             <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
@@ -230,8 +230,8 @@ export default function GetInvolvedPage() {
                   Help sort donations and assemble care baskets at our regular packing events.
                 </Typography>
               </Box>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                   Delivery
@@ -240,8 +240,8 @@ export default function GetInvolvedPage() {
                   Deliver completed baskets to hospitals, nursing homes, and homebound individuals.
                 </Typography>
               </Box>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                   Outreach
@@ -250,8 +250,8 @@ export default function GetInvolvedPage() {
                   Help spread awareness about Sweet Baskets through social media and community events.
                 </Typography>
               </Box>
-            </Stack>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            </Box>
+              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                   Coordination
@@ -260,8 +260,8 @@ export default function GetInvolvedPage() {
                   Assist with planning, logistics, and partnership development.
                 </Typography>
               </Box>
-            </Stack>
-          </Stack>
+            </Box>
+            </Box>
         </Container>
 
         {/* Call to Action */}

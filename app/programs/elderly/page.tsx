@@ -99,7 +99,7 @@ export default function ElderlyProgramPage() {
               What's Included
             </Typography>
             <Paper elevation={2} sx={{ p: 4 }}>
-              <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
                 {basketItems.map((item, index) => (
                   <Box sx={{ width: { xs: "100%", sm: "50%" } }} key={index}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -108,9 +108,9 @@ export default function ElderlyProgramPage() {
                         {item}
                       </Typography>
                     </Box>
-                  </Stack>
+                  </Box>
                 ))}
-              </Stack>
+              </Box>
             </Paper>
           </Container>
         </Box>
