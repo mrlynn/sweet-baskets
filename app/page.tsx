@@ -632,7 +632,7 @@ export default function Home() {
                       mb: 3,
                     }}
                   >
-                    "When I received my basket, I felt like someone remembered I existed. The puzzle kept my mind sharp, the lotion made my hands feel young again, and the sweet note reminded me that kindness still exists in this world."
+                    "When I received my basket, I felt like someone remembered I existed. The soft blanket brought me warmth, the lotion made my hands feel young again, and the heartfelt note reminded me that kindness still exists in this world."
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                     <Box

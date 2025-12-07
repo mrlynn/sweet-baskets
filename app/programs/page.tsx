@@ -150,7 +150,7 @@ export default function ProgramsPage() {
                     Created to combat isolation and bring joy to seniors in nursing homes or homebound.
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    These baskets feature comfort items, personal care products, puzzles, reading materials, and treats tailored to bring warmth and connection.
+                    These baskets feature soft blankets, cozy socks, chapstick, lotion, personal care products, and other comfort items tailored to bring warmth and connection.
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ p: 3, pt: 0 }}>

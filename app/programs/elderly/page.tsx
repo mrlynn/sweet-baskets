@@ -13,14 +13,14 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function ElderlyProgramPage() {
   const basketItems = [
-    'Comfort items and soft blankets',
-    'Personal care products',
-    'Puzzles and brain games',
-    'Large-print books and magazines',
-    'Healthy snacks and treats',
+    'Soft, warm blankets',
+    'Cozy socks',
+    'Chapstick and lip care',
+    'Personal care items',
+    'Lotion and hand cream',
     'Handwritten cards and notes',
     'Grooming essentials',
-    'Nostalgic items and photos',
+    'Comfort items',
   ];
 
   return (

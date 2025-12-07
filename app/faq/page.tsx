@@ -30,7 +30,7 @@ export default function FAQPage() {
     },
     {
       question: 'What items can I donate?',
-      answer: 'We accept age-appropriate toys, games, books, puzzles, comfort items, personal care products, and healthy snacks. Specific needs vary based on our current recipients. Contact us for a current list of needed items.',
+      answer: 'For seniors, we accept blankets, socks, chapstick, lotion, and personal care products. For children, we accept age-appropriate toys, games, books, puzzles, and personal care items. Specific needs vary based on our current recipients. Contact us for a current list of needed items.',
     },
     {
       question: 'Are donations tax-deductible?',

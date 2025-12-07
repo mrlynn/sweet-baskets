@@ -22,6 +22,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const donationAmounts = [
   { amount: 25, baskets: 1, description: '1 basket' },
+  { amount: 50, baskets: 2, description: '2 baskets' },
   { amount: 100, baskets: 4, description: '4 baskets' },
   { amount: 250, baskets: 10, description: '10 baskets' },
   { amount: 500, baskets: 20, description: '20 baskets' },
@@ -85,6 +86,31 @@ export default function DonatePage() {
           </Typography>
         </Container>
 
+        {/* Notice Banner */}
+        <Container maxWidth="md" sx={{ py: 0, pb: 4 }}>
+          <Paper
+            elevation={0}
+            sx={{
+              p: 3,
+              bgcolor: 'primary.light',
+              borderLeft: '6px solid',
+              borderColor: 'primary.main',
+              borderRadius: 2,
+            }}
+          >
+            <Typography variant="h6" sx={{ color: 'white', fontWeight: 700, mb: 1 }}>
+              Online Donations Coming Soon
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'white', lineHeight: 1.7 }}>
+              We're currently completing the necessary paperwork to enable secure online donation processing. In the meantime, please{' '}
+              <Link href="/contact" style={{ color: 'white', fontWeight: 600, textDecoration: 'underline' }}>
+                contact us directly
+              </Link>
+              {' '}to discuss how you can support Sweet Baskets through financial donations, in-kind contributions, or corporate sponsorship.
+            </Typography>
+          </Paper>
+        </Container>
+
         {/* Donation Form */}
         <Container maxWidth="md" sx={{ py: 4 }}>
           <Paper
@@ -136,8 +162,8 @@ export default function DonatePage() {
                     setCustomAmount('');
                   }}
                   sx={{
-                    width: { xs: "calc(50% - 8px)", sm: "calc(25% - 12px)" },
-                    flex: { xs: "0 0 calc(50% - 8px)", sm: "0 0 calc(25% - 12px)" },
+                    width: { xs: "calc(50% - 8px)", sm: "calc(20% - 12.8px)" },
+                    flex: { xs: "0 0 calc(50% - 8px)", sm: "0 0 calc(20% - 12.8px)" },
                     cursor: 'pointer',
                   }}
                 >
@@ -318,7 +344,7 @@ export default function DonatePage() {
                     In-Kind Donations
                   </Typography>
                   <Typography variant="body1" sx={{ color: 'text.secondary', mb: 3 }}>
-                    Donate items that go into our care baskets—toys, books, comfort items, personal care products, and more.
+                    Donate items that go into our care baskets—blankets, socks, chapstick, personal care products, toys for children, and more.
                   </Typography>
                   <Button
                     component={Link}
@@ -413,7 +439,7 @@ export default function DonatePage() {
                     $25
                   </Typography>
                   <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    Provides comfort items for one child's basket
+                    Provides toys and personal items for one child's basket
                   </Typography>
                 </Box>
               </Box>

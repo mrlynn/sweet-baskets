@@ -15,11 +15,11 @@ export default function ChildrenProgramPage() {
   const basketItems = [
     'Age-appropriate toys and games',
     'Coloring books and art supplies',
-    'Comfort items (stuffed animals, blankets)',
+    'Comfort items (stuffed animals)',
     'Books and puzzles',
-    'Healthy snacks and treats',
     'Activity kits and crafts',
     'Personal care items',
+    'Chapstick and lip care',
     'Encouraging cards and notes',
   ];
 
