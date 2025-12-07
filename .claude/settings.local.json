@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(find:*)",
+      "Bash(for file in app/page.tsx app/about/page.tsx app/programs/page.tsx app/programs/children/page.tsx app/programs/elderly/page.tsx app/get-involved/page.tsx app/donate/page.tsx components/Footer.tsx)",
+      "Bash(do)",
+      "Bash(done)",
+      "Bash(npm run build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
