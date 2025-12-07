@@ -21,6 +21,7 @@ const basePages = [
   { label: 'Programs', href: '/programs' },
   { label: 'Get Involved', href: '/get-involved' },
   { label: 'Impact', href: '/impact' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
 

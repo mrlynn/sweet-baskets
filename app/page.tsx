@@ -732,6 +732,80 @@ export default function Home() {
             </Box>
           </Container>
         </Box>
+
+        {/* Photo Gallery Preview */}
+        <Box sx={{ bgcolor: 'background.default', py: 8 }}>
+          <Container maxWidth="lg">
+            <SectionHeading subtitle="See our volunteers in action and the impact we're making">
+              Our Community in Action
+            </SectionHeading>
+
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: {
+                  xs: '1fr',
+                  sm: 'repeat(2, 1fr)',
+                  md: 'repeat(4, 1fr)',
+                },
+                gap: 2,
+                mb: 4,
+              }}
+            >
+              {[
+                '/photos/IMG_7320.jpeg',
+                '/photos/IMG_7643.jpeg',
+                '/photos/IMG_7672.jpeg',
+                '/photos/IMG_7677.jpeg',
+              ].map((photo, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    position: 'relative',
+                    paddingBottom: '100%',
+                    overflow: 'hidden',
+                    borderRadius: 2,
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.05)',
+                      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
+                    },
+                  }}
+                >
+                  <img
+                    src={photo}
+                    alt={`Sweet Baskets volunteers ${index + 1}`}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                    }}
+                  />
+                </Box>
+              ))}
+            </Box>
+
+            <Box sx={{ textAlign: 'center' }}>
+              <Button
+                component={Link}
+                href="/gallery"
+                variant="contained"
+                color="primary"
+                size="large"
+                sx={{
+                  px: 4,
+                  py: 1.5,
+                }}
+              >
+                View Full Gallery
+              </Button>
+            </Box>
+          </Container>
+        </Box>
       </Box>
       <Footer />
     </>
