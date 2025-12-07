@@ -199,54 +199,64 @@ export default function AboutPage() {
         </Box>
 
         {/* Our Commitment Section */}
-        <Container maxWidth="md" sx={{ py: 8 }}>
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: '2rem', md: '2.5rem' },
-              mb: 4,
-              color: 'primary.main',
-              textAlign: 'center',
-            }}
-          >
-            Our Commitment
-          </Typography>
-          <Box sx={{ bgcolor: 'primary.light', p: 4, borderRadius: 3 }}>
+        <Box sx={{ bgcolor: 'background.default', py: 8 }}>
+          <Container maxWidth="md">
             <Typography
-              variant="body1"
+              variant="h2"
               sx={{
-                fontSize: '1.125rem',
-                lineHeight: 1.8,
-                color: 'primary.dark',
-                mb: 2,
+                fontSize: { xs: '2rem', md: '2.5rem' },
+                mb: 4,
+                color: 'primary.main',
+                textAlign: 'center',
               }}
             >
-              At Sweet Baskets, we are committed to:
+              Our Commitment
             </Typography>
-            <Box component="ul" sx={{ pl: 3, color: 'primary.dark' }}>
-              <li>
-                <Typography variant="body1" sx={{ fontSize: '1.125rem', mb: 1 }}>
-                  Delivering thoughtfully curated baskets that meet the specific needs and preferences of recipients
-                </Typography>
-              </li>
-              <li>
-                <Typography variant="body1" sx={{ fontSize: '1.125rem', mb: 1 }}>
-                  Partnering with healthcare facilities to identify those who would benefit most from our service
-                </Typography>
-              </li>
-              <li>
-                <Typography variant="body1" sx={{ fontSize: '1.125rem', mb: 1 }}>
-                  Operating with transparency and accountability as we work toward 501(c)(3) nonprofit status
-                </Typography>
-              </li>
-              <li>
-                <Typography variant="body1" sx={{ fontSize: '1.125rem' }}>
-                  Growing our reach while maintaining the personal, heartfelt touch that makes each basket special
-                </Typography>
-              </li>
-            </Box>
-          </Box>
-        </Container>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 4,
+                borderRadius: 3,
+                background: 'linear-gradient(135deg, #3F5BA9 0%, #5B7BC9 100%)',
+                color: 'white',
+              }}
+            >
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: '1.125rem',
+                  lineHeight: 1.8,
+                  mb: 3,
+                  fontWeight: 500,
+                }}
+              >
+                At Sweet Baskets, we are committed to:
+              </Typography>
+              <Box component="ul" sx={{ pl: 3, m: 0 }}>
+                <Box component="li" sx={{ mb: 2 }}>
+                  <Typography variant="body1" sx={{ fontSize: '1.125rem', lineHeight: 1.7 }}>
+                    Delivering thoughtfully curated baskets that meet the specific needs and preferences of recipients
+                  </Typography>
+                </Box>
+                <Box component="li" sx={{ mb: 2 }}>
+                  <Typography variant="body1" sx={{ fontSize: '1.125rem', lineHeight: 1.7 }}>
+                    Partnering with healthcare facilities to identify those who would benefit most from our service
+                  </Typography>
+                </Box>
+                <Box component="li" sx={{ mb: 2 }}>
+                  <Typography variant="body1" sx={{ fontSize: '1.125rem', lineHeight: 1.7 }}>
+                    Operating with transparency and accountability as we work toward 501(c)(3) nonprofit status
+                  </Typography>
+                </Box>
+                <Box component="li">
+                  <Typography variant="body1" sx={{ fontSize: '1.125rem', lineHeight: 1.7 }}>
+                    Growing our reach while maintaining the personal, heartfelt touch that makes each basket special
+                  </Typography>
+                </Box>
+              </Box>
+            </Paper>
+          </Container>
+        </Box>
       </Box>
       <Footer />
     </>
