@@ -147,7 +147,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 1 }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 0.5 }}>
             {pages.map((page) => (
               <Button
                 key={page.label}
@@ -155,8 +155,10 @@ export default function Header() {
                 href={page.href}
                 sx={{
                   my: 2,
+                  px: 1.5,
                   color: 'text.primary',
                   display: 'block',
+                  fontSize: '0.9rem',
                   '&:hover': {
                     color: 'primary.main',
                   },
