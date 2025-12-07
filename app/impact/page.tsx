@@ -63,7 +63,7 @@ export default function ImpactPage() {
             2025 Goals & Progress
           </Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -91,7 +91,7 @@ export default function ImpactPage() {
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -119,7 +119,7 @@ export default function ImpactPage() {
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -147,7 +147,7 @@ export default function ImpactPage() {
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -217,88 +217,175 @@ export default function ImpactPage() {
         </Box>
 
         {/* Looking Ahead */}
-        <Container maxWidth="md" sx={{ py: 8 }}>
+        <Container maxWidth="lg" sx={{ py: 8 }}>
           <Typography
             variant="h2"
             sx={{
               fontSize: { xs: '2rem', md: '2.5rem' },
-              mb: 4,
+              mb: 6,
               color: 'primary.main',
               textAlign: 'center',
             }}
           >
             Looking Ahead
           </Typography>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-            <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+          <Box 
+            sx={{ 
+              display: "flex", 
+              flexWrap: "wrap", 
+              gap: 3,
+              justifyContent: 'center',
+            }}
+          >
+            <Box sx={{ width: { xs: "100%", sm: "calc(50% - 12px)", lg: "calc(25% - 18px)" }, flex: { sm: "1 1 0", lg: "0 1 auto" } }}>
               <Paper
-                elevation={0}
+                elevation={2}
                 sx={{
-                  p: 3,
-                  bgcolor: 'primary.light',
+                  p: 4,
+                  bgcolor: '#5B7BC9',
                   height: '100%',
+                  borderRadius: 3,
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 24px rgba(63, 91, 169, 0.25)',
+                  },
                 }}
               >
-                <Typography variant="h6" sx={{ mb: 2, color: 'primary.dark' }}>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    mb: 2, 
+                    color: '#2E4380',
+                    fontWeight: 700,
+                    fontSize: '1.125rem',
+                  }}
+                >
                   Expand Our Reach
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'primary.dark' }}>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    color: 'white',
+                    lineHeight: 1.7,
+                  }}
+                >
                   Partner with more hospitals, nursing homes, and assisted living facilities across the region.
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(50% - 12px)", lg: "calc(25% - 18px)" }, flex: { sm: "1 1 0", lg: "0 1 auto" } }}>
               <Paper
-                elevation={0}
+                elevation={2}
                 sx={{
-                  p: 3,
-                  bgcolor: 'secondary.light',
+                  p: 4,
+                  bgcolor: '#F06292',
                   height: '100%',
+                  borderRadius: 3,
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 24px rgba(233, 30, 99, 0.25)',
+                  },
                 }}
               >
-                <Typography variant="h6" sx={{ mb: 2, color: 'secondary.dark' }}>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    mb: 2, 
+                    color: '#C2185B',
+                    fontWeight: 700,
+                    fontSize: '1.125rem',
+                  }}
+                >
                   Build Our Team
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'secondary.dark' }}>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    color: 'white',
+                    lineHeight: 1.7,
+                  }}
+                >
                   Recruit and train dedicated volunteers who share our passion for service.
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(50% - 12px)", lg: "calc(25% - 18px)" }, flex: { sm: "1 1 0", lg: "0 1 auto" } }}>
               <Paper
-                elevation={0}
+                elevation={2}
                 sx={{
-                  p: 3,
-                  bgcolor: 'secondary.light',
+                  p: 4,
+                  bgcolor: '#F06292',
                   height: '100%',
+                  borderRadius: 3,
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 24px rgba(233, 30, 99, 0.25)',
+                  },
                 }}
               >
-                <Typography variant="h6" sx={{ mb: 2, color: 'secondary.dark' }}>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    mb: 2, 
+                    color: '#C2185B',
+                    fontWeight: 700,
+                    fontSize: '1.125rem',
+                  }}
+                >
                   Secure 501(c)(3) Status
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'secondary.dark' }}>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    color: 'white',
+                    lineHeight: 1.7,
+                  }}
+                >
                   Complete our nonprofit application to unlock tax-deductible donations and grant opportunities.
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(50% - 12px)", lg: "calc(25% - 18px)" }, flex: { sm: "1 1 0", lg: "0 1 auto" } }}>
               <Paper
-                elevation={0}
+                elevation={2}
                 sx={{
-                  p: 3,
-                  bgcolor: 'primary.light',
+                  p: 4,
+                  bgcolor: '#5B7BC9',
                   height: '100%',
+                  borderRadius: 3,
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 24px rgba(63, 91, 169, 0.25)',
+                  },
                 }}
               >
-                <Typography variant="h6" sx={{ mb: 2, color: 'primary.dark' }}>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    mb: 2, 
+                    color: '#2E4380',
+                    fontWeight: 700,
+                    fontSize: '1.125rem',
+                  }}
+                >
                   Track & Share Stories
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'primary.dark' }}>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    color: 'white',
+                    lineHeight: 1.7,
+                  }}
+                >
                   Document and celebrate the impact we're making in the lives of recipients and their families.
                 </Typography>
               </Paper>
             </Box>
-            </Box>
+          </Box>
         </Container>
 
         {/* Testimonial Placeholder */}

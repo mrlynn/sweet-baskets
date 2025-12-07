@@ -5,12 +5,16 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Paper from '@mui/material/Paper';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ArchedDivider from '@/components/ArchedDivider';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import FadeInCard from '@/components/FadeInCard';
+import SparkleIcon from '@/components/SparkleIcon';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
@@ -26,68 +30,159 @@ export default function Home() {
         {/* Hero Section */}
         <Box
           sx={{
-            background: 'linear-gradient(135deg, #3F5BA9 0%, #5B7BC9 100%)',
+            position: 'relative',
             color: 'white',
-            py: { xs: 8, md: 12 },
-            textAlign: 'center',
+            overflow: 'hidden',
+            pb: 0,
+            pt: { xs: 8, md: 12 },
           }}
         >
-          <Container maxWidth="md">
-            <Typography
-              variant="h1"
+          {/* Background Image */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: 'url(/background.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              zIndex: 0,
+            }}
+          />
+          {/* Gradient Overlay */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(135deg, rgba(63, 91, 169, 0.85) 0%, rgba(91, 123, 201, 0.85) 100%)',
+              zIndex: 1,
+            }}
+          />
+          <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
+            <Box
               sx={{
-                fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' },
-                fontWeight: 700,
-                mb: 3,
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                alignItems: 'flex-end',
+                gap: { xs: 4, md: 6 },
+                minHeight: { md: '500px' },
               }}
             >
-              Small moments of kindness become lifelines of hope.
-            </Typography>
-            <Typography
-              variant="h5"
-              sx={{
-                fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' },
-                mb: 5,
-                opacity: 0.95,
-                fontWeight: 400,
-              }}
-            >
-              Sweet Baskets brings comfort to children in hospitals and elderly individuals who are homebound or in nursing care.
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Button
-                component={Link}
-                href="/donate"
-                variant="contained"
-                color="secondary"
-                size="large"
+              {/* Text Content */}
+              <Box
                 sx={{
-                  fontSize: '1.125rem',
-                  py: 1.5,
-                  px: 4,
+                  flex: 1,
+                  textAlign: { xs: 'center', md: 'left' },
+                  pb: { xs: 4, md: 8 },
+                  alignSelf: { xs: 'center', md: 'flex-start' },
+                  pt: { md: 6 },
+                  position: 'relative',
                 }}
               >
-                Give a Basket
-              </Button>
-              <Button
-                component={Link}
-                href="/get-involved"
-                variant="outlined"
-                size="large"
+                {/* Decorative Sparkles */}
+                <Box sx={{ position: 'absolute', top: 20, left: { xs: 20, md: -20 }, display: { xs: 'none', sm: 'block' } }}>
+                  <SparkleIcon size={24} color="rgba(255, 255, 255, 0.7)" delay={0} />
+                </Box>
+                <Box sx={{ position: 'absolute', top: 100, right: { xs: 30, md: 50 }, display: { xs: 'none', sm: 'block' } }}>
+                  <SparkleIcon size={16} color="rgba(255, 255, 255, 0.6)" delay={0.5} />
+                </Box>
+                <Box sx={{ position: 'absolute', bottom: 50, left: { xs: 10, md: 30 }, display: { xs: 'none', sm: 'block' } }}>
+                  <SparkleIcon size={20} color="rgba(255, 255, 255, 0.5)" delay={1} />
+                </Box>
+
+                <Typography
+                  variant="h1"
+                  sx={{
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' },
+                    fontWeight: 700,
+                    mb: 3,
+                    textShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                    position: 'relative',
+                  }}
+                >
+                  Small moments of kindness become lifelines of hope.
+                </Typography>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' },
+                    mb: 5,
+                    opacity: 0.95,
+                    fontWeight: 400,
+                  }}
+                >
+                  Sweet Baskets brings comfort to children in hospitals and elderly individuals who are homebound or in nursing care.
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-start' }, flexWrap: 'wrap' }}>
+                  <Button
+                    component={Link}
+                    href="/donate"
+                    variant="contained"
+                    color="secondary"
+                    size="large"
+                    sx={{
+                      fontSize: '1.125rem',
+                      py: 1.5,
+                      px: 4,
+                    }}
+                  >
+                    Give a Basket
+                  </Button>
+                  <Button
+                    component={Link}
+                    href="/get-involved"
+                    variant="outlined"
+                    size="large"
+                    sx={{
+                      fontSize: '1.125rem',
+                      py: 1.5,
+                      px: 4,
+                      color: 'white',
+                      borderColor: 'white',
+                      '&:hover': {
+                        borderColor: 'white',
+                        bgcolor: 'rgba(255, 255, 255, 0.1)',
+                      },
+                    }}
+                  >
+                    Volunteer
+                  </Button>
+                </Box>
+              </Box>
+
+              {/* Image - Aligned to Bottom */}
+              <Box
                 sx={{
-                  fontSize: '1.125rem',
-                  py: 1.5,
-                  px: 4,
-                  color: 'white',
-                  borderColor: 'white',
-                  '&:hover': {
-                    borderColor: 'white',
-                    bgcolor: 'rgba(255, 255, 255, 0.1)',
-                  },
+                  flex: 1,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'flex-end',
+                  maxWidth: { xs: '100%', md: '550px' },
+                  height: { xs: 'auto', md: '100%' },
                 }}
               >
-                Volunteer
-              </Button>
+                <Image
+                  src="/receiving-basket.png"
+                  alt="Elderly woman joyfully receiving a Sweet Basket"
+                  width={600}
+                  height={500}
+                  priority
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxWidth: '500px',
+                    display: 'block',
+                    objectFit: 'contain',
+                    objectPosition: 'bottom',
+                  }}
+                />
+              </Box>
             </Box>
           </Container>
         </Box>
@@ -134,13 +229,17 @@ export default function Home() {
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
-                <Card
+                <FadeInCard
+                  delay={0}
                   sx={{
                     height: '100%',
                     textAlign: 'center',
-                    transition: 'transform 0.3s ease',
+                    transition: 'all 0.3s ease',
+                    border: '2px solid transparent',
                     '&:hover': {
                       transform: 'translateY(-8px)',
+                      borderColor: 'secondary.main',
+                      boxShadow: '0 8px 24px rgba(233, 30, 99, 0.2)',
                     },
                   }}
                 >
@@ -163,16 +262,20 @@ export default function Home() {
                       Volunteers, donors, and partners contribute age-appropriate gifts and essentials.
                     </Typography>
                   </CardContent>
-                </Card>
+                </FadeInCard>
               </Box>
               <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
-                <Card
+                <FadeInCard
+                  delay={200}
                   sx={{
                     height: '100%',
                     textAlign: 'center',
-                    transition: 'transform 0.3s ease',
+                    transition: 'all 0.3s ease',
+                    border: '2px solid transparent',
                     '&:hover': {
                       transform: 'translateY(-8px)',
+                      borderColor: 'secondary.main',
+                      boxShadow: '0 8px 24px rgba(233, 30, 99, 0.2)',
                     },
                   }}
                 >
@@ -195,16 +298,20 @@ export default function Home() {
                       Each basket is personalized to brighten someone's day.
                     </Typography>
                   </CardContent>
-                </Card>
+                </FadeInCard>
               </Box>
               <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
-                <Card
+                <FadeInCard
+                  delay={400}
                   sx={{
                     height: '100%',
                     textAlign: 'center',
-                    transition: 'transform 0.3s ease',
+                    transition: 'all 0.3s ease',
+                    border: '2px solid transparent',
                     '&:hover': {
                       transform: 'translateY(-8px)',
+                      borderColor: 'secondary.main',
+                      boxShadow: '0 8px 24px rgba(233, 30, 99, 0.2)',
                     },
                   }}
                 >
@@ -227,7 +334,7 @@ export default function Home() {
                       To pediatric hospital rooms, nursing homes, and homebound seniors.
                     </Typography>
                   </CardContent>
-                </Card>
+                </FadeInCard>
               </Box>
             </Box>
           </Container>
@@ -276,8 +383,8 @@ export default function Home() {
 
         {/* Trust/Stats Section */}
         <Container maxWidth="lg" sx={{ py: 8 }}>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-            <Box sx={{ width: { xs: "100%", sm: "calc(33.333% - 21.33px)" }, flex: { sm: "1 1 0" } }}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center" }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(33.333% - 21.33px)" }, flex: { sm: "1 1 0" }, textAlign: 'center' }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -286,26 +393,17 @@ export default function Home() {
                   height: '100%',
                 }}
               >
-                <Box
-                  sx={{
-                    display: 'inline-flex',
-                    p: 2,
-                    bgcolor: 'primary.light',
-                    borderRadius: '50%',
-                    mb: 2,
-                  }}
-                >
-                  <TrendingUpIcon sx={{ fontSize: 40, color: 'primary.main' }} />
-                </Box>
-                <Typography variant="h4" sx={{ color: 'primary.main', mb: 1, fontWeight: 700 }}>
-                  1,000
-                </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                  2025 Goal: Baskets Delivered
-                </Typography>
+                <AnimatedCounter
+                  value="1,000"
+                  label="2025 Goal: Baskets Delivered"
+                  icon={<TrendingUpIcon sx={{ fontSize: 40, color: 'primary.main' }} />}
+                  color="primary.main"
+                  bgColor="primary.light"
+                  showHeartPulse={true}
+                />
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(33.333% - 21.33px)" }, flex: { sm: "1 1 0" }, textAlign: 'center' }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -314,26 +412,17 @@ export default function Home() {
                   height: '100%',
                 }}
               >
-                <Box
-                  sx={{
-                    display: 'inline-flex',
-                    p: 2,
-                    bgcolor: 'secondary.light',
-                    borderRadius: '50%',
-                    mb: 2,
-                  }}
-                >
-                  <GroupsIcon sx={{ fontSize: 40, color: 'secondary.main' }} />
-                </Box>
-                <Typography variant="h4" sx={{ color: 'secondary.main', mb: 1, fontWeight: 700 }}>
-                  Growing
-                </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                  Volunteers Active
-                </Typography>
+                <AnimatedCounter
+                  value="Growing"
+                  label="Volunteers Active"
+                  icon={<GroupsIcon sx={{ fontSize: 40, color: 'secondary.main' }} />}
+                  color="secondary.main"
+                  bgColor="secondary.light"
+                  showHeartPulse={true}
+                />
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(33.333% - 21.33px)" }, flex: { sm: "1 1 0" }, textAlign: 'center' }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -342,26 +431,17 @@ export default function Home() {
                   height: '100%',
                 }}
               >
-                <Box
-                  sx={{
-                    display: 'inline-flex',
-                    p: 2,
-                    bgcolor: 'primary.light',
-                    borderRadius: '50%',
-                    mb: 2,
-                  }}
-                >
-                  <BusinessIcon sx={{ fontSize: 40, color: 'primary.main' }} />
-                </Box>
-                <Typography variant="h4" sx={{ color: 'primary.main', mb: 1, fontWeight: 700 }}>
-                  Expanding
-                </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                  Partner Facilities
-                </Typography>
+                <AnimatedCounter
+                  value="Expanding"
+                  label="Partner Facilities"
+                  icon={<BusinessIcon sx={{ fontSize: 40, color: 'primary.main' }} />}
+                  color="primary.main"
+                  bgColor="primary.light"
+                  showHeartPulse={true}
+                />
               </Paper>
             </Box>
-            </Box>
+          </Box>
         </Container>
       </Box>
       <Footer />

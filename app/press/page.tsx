@@ -66,7 +66,7 @@ export default function PressPage() {
             Key Facts
           </Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 6 }}>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
                   Mission
@@ -76,7 +76,7 @@ export default function PressPage() {
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
                   Programs
@@ -86,7 +86,7 @@ export default function PressPage() {
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
                   Status
@@ -96,7 +96,7 @@ export default function PressPage() {
                 </Typography>
               </Paper>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Paper elevation={0} sx={{ p: 3, bgcolor: 'background.default' }}>
                 <Typography variant="h6" sx={{ color: 'secondary.main', mb: 1 }}>
                   2025 Goal

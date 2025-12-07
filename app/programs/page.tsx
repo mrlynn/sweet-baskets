@@ -68,7 +68,7 @@ export default function ProgramsPage() {
 
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
             {/* Children's Hospital Baskets */}
-            <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", md: "calc(50% - 16px)" }, flex: { md: "1 1 0" } }}>
               <Card
                 sx={{
                   height: '100%',
@@ -118,7 +118,7 @@ export default function ProgramsPage() {
             </Box>
 
             {/* Elderly Care Baskets */}
-            <Box sx={{ width: { xs: "100%", md: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", md: "calc(50% - 16px)" }, flex: { md: "1 1 0" } }}>
               <Card
                 sx={{
                   height: '100%',

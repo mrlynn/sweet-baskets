@@ -159,6 +159,11 @@ export default function Header() {
               sx={{
                 display: { xs: 'none', sm: 'inline-flex' },
                 fontWeight: 700,
+                borderRadius: 28,
+                boxShadow: '0 4px 12px rgba(233, 30, 99, 0.3)',
+                '&:hover': {
+                  boxShadow: '0 6px 16px rgba(233, 30, 99, 0.4)',
+                },
               }}
             >
               Donate

@@ -65,7 +65,7 @@ export default function ContactPage() {
 
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
             {/* Email */}
-            <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+            <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -101,7 +101,7 @@ export default function ContactPage() {
             </Box>
 
             {/* Phone */}
-            <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+            <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -131,7 +131,7 @@ export default function ContactPage() {
             </Box>
 
             {/* Location */}
-            <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+            <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
@@ -177,7 +177,7 @@ export default function ContactPage() {
               Reach Out If You Want To...
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                     Volunteer
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                     Donate
@@ -197,7 +197,7 @@ export default function ContactPage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                     Partner
@@ -207,7 +207,7 @@ export default function ContactPage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                     Host a Drive
@@ -217,7 +217,7 @@ export default function ContactPage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                     Learn More
@@ -227,7 +227,7 @@ export default function ContactPage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3, bgcolor: 'white', borderRadius: 2 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                     Share Feedback

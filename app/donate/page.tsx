@@ -82,7 +82,7 @@ export default function DonatePage() {
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               {/* Financial Donation */}
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Paper
                   elevation={2}
                   sx={{
@@ -115,7 +115,7 @@ export default function DonatePage() {
               </Box>
 
               {/* In-Kind Donation */}
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Paper
                   elevation={2}
                   sx={{
@@ -153,7 +153,7 @@ export default function DonatePage() {
               </Box>
 
               {/* Corporate Sponsorship */}
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Paper
                   elevation={2}
                   sx={{
@@ -228,7 +228,7 @@ export default function DonatePage() {
               How Your Donation Helps
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
                     $25
@@ -238,7 +238,7 @@ export default function DonatePage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
                     $50
@@ -248,7 +248,7 @@ export default function DonatePage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
                     $100
@@ -258,7 +258,7 @@ export default function DonatePage() {
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
                 <Box sx={{ p: 3 }}>
                   <Typography variant="h6" sx={{ mb: 1, color: 'secondary.main' }}>
                     $500

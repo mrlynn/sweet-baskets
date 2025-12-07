@@ -82,7 +82,7 @@ export default function GetInvolvedPage() {
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
               {/* Volunteer */}
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Card
                   sx={{
                     height: '100%',
@@ -123,7 +123,7 @@ export default function GetInvolvedPage() {
               </Box>
 
               {/* Host a Basket Drive */}
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Card
                   sx={{
                     height: '100%',
@@ -164,7 +164,7 @@ export default function GetInvolvedPage() {
               </Box>
 
               {/* Partner with Your Facility */}
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Card
                   sx={{
                     height: '100%',
@@ -221,7 +221,7 @@ export default function GetInvolvedPage() {
             What Volunteers Do
           </Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
-            <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                   Basket Assembly
@@ -231,7 +231,7 @@ export default function GetInvolvedPage() {
                 </Typography>
               </Box>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                   Delivery
@@ -241,7 +241,7 @@ export default function GetInvolvedPage() {
                 </Typography>
               </Box>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                   Outreach
@@ -251,7 +251,7 @@ export default function GetInvolvedPage() {
                 </Typography>
               </Box>
             </Box>
-              <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "calc(50% - 16px)" }, flex: { sm: "1 1 0" } }}>
               <Box sx={{ p: 3, bgcolor: 'background.default', borderRadius: 2 }}>
                 <Typography variant="h6" sx={{ mb: 1, color: 'primary.main' }}>
                   Coordination

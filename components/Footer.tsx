@@ -44,17 +44,19 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'primary.main',
+        bgcolor: '#2E4380',
         color: 'white',
-        pt: 8,
+        pt: 0,
         pb: 4,
         mt: 'auto',
+        borderTop: '4px solid',
+        borderColor: 'secondary.main',
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ pt: 8 }}>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
           {/* Logo and Mission */}
-          <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+          <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <Image
                 src="/sweet-baskets-logo.png"
@@ -92,7 +94,7 @@ export default function Footer() {
           </Box>
 
           {/* About Links */}
-          <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
+          <Box sx={{ flex: { xs: "0 0 50%", sm: "0 0 calc(25% - 12px)", md: "0 0 calc(16.666% - 13.33px)" } }}>
             <Typography variant="h6" sx={{ mb: 2, fontSize: '1rem', fontWeight: 700 }}>
               About
             </Typography>
@@ -115,7 +117,7 @@ export default function Footer() {
           </Box>
 
           {/* Programs Links */}
-          <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
+          <Box sx={{ flex: { xs: "0 0 50%", sm: "0 0 calc(25% - 12px)", md: "0 0 calc(16.666% - 13.33px)" } }}>
             <Typography variant="h6" sx={{ mb: 2, fontSize: '1rem', fontWeight: 700 }}>
               Programs
             </Typography>
@@ -138,7 +140,7 @@ export default function Footer() {
           </Box>
 
           {/* Get Involved Links */}
-          <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
+          <Box sx={{ flex: { xs: "0 0 50%", sm: "0 0 calc(25% - 12px)", md: "0 0 calc(16.666% - 13.33px)" } }}>
             <Typography variant="h6" sx={{ mb: 2, fontSize: '1rem', fontWeight: 700 }}>
               Get Involved
             </Typography>
@@ -161,7 +163,7 @@ export default function Footer() {
           </Box>
 
           {/* Legal Links */}
-          <Box sx={{ width: { xs: "50%", sm: "25%", md: "16.66%" } }}>
+          <Box sx={{ flex: { xs: "0 0 50%", sm: "0 0 calc(25% - 12px)", md: "0 0 calc(16.666% - 13.33px)" } }}>
             <Typography variant="h6" sx={{ mb: 2, fontSize: '1rem', fontWeight: 700 }}>
               Legal
             </Typography>

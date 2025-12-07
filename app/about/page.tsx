@@ -110,7 +110,7 @@ export default function AboutPage() {
               Why This Work Matters
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Paper
                   elevation={2}
                   sx={{
@@ -138,7 +138,7 @@ export default function AboutPage() {
                   </Typography>
                 </Paper>
               </Box>
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Paper
                   elevation={2}
                   sx={{
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   </Typography>
                 </Paper>
               </Box>
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Paper
                   elevation={2}
                   sx={{
