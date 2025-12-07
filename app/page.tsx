@@ -133,7 +133,7 @@ export default function Home() {
               How It Works
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Card
                   sx={{
                     height: '100%',
@@ -165,7 +165,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </Box>
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Card
                   sx={{
                     height: '100%',
@@ -197,7 +197,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </Box>
-              <Box sx={{ width: { xs: "100%", md: "33.33%" } }}>
+              <Box sx={{ width: { xs: "100%", md: "calc(33.333% - 21.33px)" }, flex: { md: "1 1 0" } }}>
                 <Card
                   sx={{
                     height: '100%',
@@ -277,7 +277,7 @@ export default function Home() {
         {/* Trust/Stats Section */}
         <Container maxWidth="lg" sx={{ py: 8 }}>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-            <Box sx={{ width: { xs: "100%", sm: "33.33%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "calc(33.333% - 21.33px)" }, flex: { sm: "1 1 0" } }}>
               <Paper
                 elevation={2}
                 sx={{
